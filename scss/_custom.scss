@@ -1,0 +1,149 @@
+// Custom Variables for UNXSYS
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+
+@import "bootstrap/scss/mixins/_breakpoints.scss";
+
+// for vertically centering everything on page
+html, body {
+    height: 100%;
+}
+
+// Custom Colors
+
+$main-color: #449bc0;
+$green: #00ffC4;
+$accent-color: #2151ff;
+$light-grey: #c9d0d4;
+$dark-grey: #080908;
+$opt-color: #ca5C6E;
+
+// Custom Theming
+
+$theme-colors: (
+    "primary": $main-color,
+    "secondary": $accent-color,
+    "info": $opt-color
+);
+
+// Body
+$body-bg: $light-grey;
+$body-color:$dark-grey;
+
+
+// Options
+$enable-shadows:            true;
+
+// Links
+// Style anchor elements.
+
+$link-color:                theme-color("secondary");
+$link-hover-color:          darken($link-color, 20%);
+
+// Fonts
+$font-family-monospoace: "Oxygen", "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-monospoace;
+$headings-font-family: "Oxygen Mono", monospace; 
+
+// Individual Page Styles 
+
+// Home Page
+section.main-header {
+    background: url("../../images/lone-comp.jpg");
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    margin-bottom: 0;
+    h1 {
+        @include media-breakpoint-up(md) {
+            padding-top: 30vh;
+        }
+        color: $accent-color;
+        font-weight: bold;
+    }
+    h2 {
+        color: $dark-grey;
+    }
+}
+
+// Services Page
+#services--intro {
+    background-color: inherit;
+    min-height: 100vh;
+}
+
+#services--intro {
+    i.scroll-icon {
+        margin-left: 15px;
+        transition: transform 0.2s ease;
+        position: relative;
+        &:hover {
+            transform: translateY(20px);
+        }
+    }
+}
+
+#services--development {
+    min-height: 80vh;
+    background-color: $main-color;
+}
+#services--systems {
+    min-height: 80vh;
+
+}       
+#services--other {
+    background-color: $main-color;
+    min-height: 80vh;
+}
+
+// Projects Page
+//== gradient and skewed background
+.header--bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -5;
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+        height: 66vh;
+    }
+    background-image: linear-gradient($main-color, $accent-color);
+    transform: skewY(-6deg);
+    transform-origin: top left;
+}
+#projects--intro {
+    margin: auto;
+    max-width: 700px;
+    .projects--header {
+        min-height: 300px;
+        overflow: hidden;
+        position: relative;
+    }
+    h2, p {
+        position: relative;
+        color: white;
+    }
+}
+
+
+.card.projects-card {
+    background-color: lighten($main-color, 15%);
+    min-width: 270px;
+    margin-bottom: 1.5rem;
+}
+
+// About Page
+
+.about--main-img {
+    align-self: center;
+}
+
+.col-4.about--person {
+    min-width: 200px;
+    padding: 1rem;
+}
